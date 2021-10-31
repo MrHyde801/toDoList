@@ -5,17 +5,23 @@ body {
     font-size: 1.5rem;
     background-color: #dadfea;
     color:rgb(70, 70, 172);
-
-    display: grid;
-    grid:
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    /* grid:
         "header header header header" auto
         "...... lists  active ......" auto /
-        1fr minmax(100px,300px) minmax(250px,500px) 1fr;
+        1fr minmax(100px,300px) minmax(250px,500px) 1fr; */
     /*Possible replace grid with flexbox*/
 } 
 
+.container {
+    display:flex;
+    width:80%;
+    flex-wrap:wrap;
+}
+
 .title {
-    grid-area: header;
     text-align: center;
     font-size: calc(7vw + 2rem);
     font-weight: 900;
@@ -25,7 +31,7 @@ body {
 }
 
 .all-tasks {
-    grid-area: lists;
+    flex-grow: 1;
 }
 
 .task-list {
@@ -47,14 +53,14 @@ form {
     color: inherit;
 }
 
-.btn-create {
+.btn.create {
     font-size: 1.5rem;
     font-weight: 900;
     margin-right: 0.25em;
     transition: opacity 250ms ease-in;
 }
 
-.btn.list:hover {
+.btn.create:hover {
     opacity: 0.7;
 }
 
@@ -73,10 +79,16 @@ form {
     border: 0;
     color: inherit;
     border-bottom: 1px solid currentColor;
+    font-size:inherit;
     outline: none;
+    padding: 0.25em;
     transition: border-bottom 150ms ease-in;
     order: 2;
     /* possibly keep the outline and change the color, reverse the button order so its at the end*/
+}
+
+.new::placeholder {
+    opacity: 0.3;
 }
 
 .new:focus {
@@ -84,17 +96,13 @@ form {
 }
 
 .new:focus::placeholder {
-    opacity: 0.2;
+    opacity: 0.15;
     /* take off opacity */
-}
-
-.new.task, .new.list {
-    padding: 0.25em;
 }
 
 /* edit the new task to make the width and spacing look not small */
 .new.list {
-    font-size:1.2;
+    font-size:1.1rem;
 }
 
 .new.task {
@@ -107,7 +115,7 @@ form {
 }
 
 .todo-list {
-    grid-area: active;
+    flex-grow:2;
     background: white;
     /* background: (match color to our scheme);
     color: (match color to our scheme); */
