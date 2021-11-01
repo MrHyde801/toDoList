@@ -121,7 +121,7 @@ form {
 
 .todo-header {
     padding: 2rem;
-    background: #adaeb186;
+    border-bottom: dashed 0.5px blue;
     display:flex;
     align-items: center;
     justify-content: space-between;
