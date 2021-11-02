@@ -17,11 +17,7 @@
     <div class="container">  
         <div class="all-tasks">
             <h2 class="task-list-title">My Lists</h2>
-            <ul class="task-list" data-lists>
-                <!-- <li class="active-list">Work</li>
-                <li>School</li>
-                <li>Grocery</li> -->
-            </ul>
+            <ul class="task-list" data-lists></ul>
 
             <form action="" data-new-list-form>
                 <input type="text" class="new list" data-new-list-input placeholder="new list name" aria-label="new list name"/>
@@ -38,46 +34,31 @@
             </div>
 
             <div class="todo-body">
-                <div class="tasks" data-tasks>
-                    <div class="task">
-                        <input type="checkbox" id="task-1"/>
-                        <label for="task-1">
-                            <span class="custom-checkbox"></span>
-                            First Task
-                        </label>
-                    </div>
-
-                    <div class="task">
-                        <input type="checkbox" id="task-2"/>
-                        <label for="task-2">
-                            <span class="custom-checkbox"></span>
-                            Second Task
-                        </label>
-                    </div>
-
-                    <div class="task">
-                        <input type="checkbox" id="task-3"/>
-                        <label for="task-3">
-                            <span class="custom-checkbox"></span>
-                            Third Task
-                        </label>
-                    </div>
-                </div>
+                <div class="tasks" data-tasks></div>
                     
                 <div class="new-task-creator">
-                    <form action="">
-                        <input type="text" class="new task" placeholder="new task name" aria-label="new task name"/>
+                    <form action="" data-new-task-form>
+                        <input type="text" data-new-task-input class="new task" placeholder="new task name" aria-label="new task name"/>
                         <button class="btn create"><i class="fas fa-plus-square"></i></button>
                     </form>
                 </div>
 
                 <div class="delete-task">
-                    <button class="btn delete">Clear Completed Tasks</button>
+                    <button class="btn delete" data-clear-complete-tasks-button>Clear Completed Tasks</button>
                     <button class="btn delete" data-delete-list-button>Delete List</button>
                 </div>
             </div>
         </div>
     </div>   
+
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox" />
+            <label>
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+    </template>
 </body>
 <script src="https://kit.fontawesome.com/ee58fd32d1.js" crossorigin="anonymous"></script>
 <script src="main.js"></script>
