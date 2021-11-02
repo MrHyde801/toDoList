@@ -10,6 +10,10 @@ body {
     flex-flow: column wrap;
 } 
 
+li:hover {
+    opacity: .5;
+}
+
 .container {
     display:flex;
     width:80%;
@@ -108,7 +112,7 @@ form {
 
 .active-list {
     font-size: 40px;
-    transition: font-size 300ms ease-in;
+    transition: font-size 600ms ease-in;
 }
 
 .todo-list {
