@@ -19,33 +19,35 @@
         <div class="row">
             <div class="all-tasks col-md-3">
                 <h2 class="task-list-title">My Lists</h2>
-                <ul class="task-list" data-lists></ul>
+                <ul class="task-list" id="data-lists"></ul>
 
-                <form action="" data-new-list-form>
-                    <input type="text" class="new list" data-new-list-input placeholder="new list name" aria-label="new list name"/>
+                <form action="" id="data-new-list-form">
+                    <input type="text" class="new list" id="data-new-list-input" placeholder="new list name" aria-label="new list name"/>
                     <button class="btn create" aria-label="create new list"><i class="fas fa-plus-square"></i></button>
                 </form>
             </div>
 
-            <div class="todo-list col-md-8" data-list-display-container>
+
+
+            <div class="todo-list col-md-8" id="data-list-display-container">
                 <div class="todo-header">
-                    <h2 class="list-title" data-list-title></h2>
-                    <p class="task-count" data-list-count></p>
+                    <h2 class="list-title" id="data-list-title"></h2>
+                    <p class="task-count" id="data-list-count"></p>
                 </div>
 
                 <div class="todo-body">
-                    <div class="tasks" data-tasks></div>
+                    <div class="tasks" id="data-tasks"></div>
                         
                     <div class="new-task-creator">
-                        <form action="" data-new-task-form>
-                            <input type="text" data-new-task-input class="new task" placeholder="new task name" aria-label="new task name"/>
+                        <form action="" id="data-new-task-form">
+                            <input type="text" id="data-new-task-input" class="new task" placeholder="new task name" aria-label="new task name"/>
                             <button class="btn create"><i class="fas fa-plus-square"></i></button>
                         </form>
                     </div>
 
                     <div class="delete-task">
-                        <button class="btn delete" data-clear-complete-tasks-button>Clear Completed Tasks</button>
-                        <button class="btn delete" data-delete-list-button>Delete List</button>
+                        <button class="btn delete" id="data-clear-complete-tasks-button">Clear Completed Tasks</button>
+                        <button class="btn delete" id="data-delete-list-button">Delete List</button>
                     </div>
                 </div>
             </div>
