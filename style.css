@@ -38,6 +38,7 @@ body {
 .todo-list {
     background-color: white;
     border-radius: 0 20px 20px 0;
+    border: 4px dashed #D4F2EF;
 }
 
 .container-fluid {
