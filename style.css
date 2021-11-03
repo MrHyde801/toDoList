@@ -2,48 +2,81 @@ body {
     margin:0;
     font-family: 'Titillium Web', sans-serif;
     font-weight: 300;
-    font-size: 1.5rem;
-    background-color: #dadfea;
-    color:rgb(70, 70, 172);
+    font-size: 24px;
+    color:#27847E;
     display: flex;
     align-items: center;
     flex-flow: column wrap;
+    word-break: break-word;
 } 
-
-li:hover {
-    opacity: .5;
-}
-
-.container {
-    display:flex;
-    width:80%;
-    flex-wrap:wrap;
-}
 
 .title {
     align-self:flex-start;
     padding: 50px 0 0 60px;
+    width: 100%;
     font-size: 80px;
     font-weight: 900;
     color: rgb(0,0,0,0.1);
+    background: #27847E;
     letter-spacing: 1px;
-    margin: -.3em 0 0.5em
-    /* possibly get rid of title */
+    margin: -5px 0 8px
+  
+}
+
+.row.header {
+    background: #27847E;
+    height: 20px;
+    width: 100%;
 }
 
 .all-tasks {
-    flex-grow: 1;
+    border-radius: 10px 0 0 10px;
+    border-right: 3px solid #D4F2EF;
+    background: white;
+}
+
+.todo-list {
+    background-color: white;
+    border-radius: 0 20px 20px 0;
+}
+
+.container-fluid {
+    padding: 50px 40px;
+}
+
+li {
+    opacity: .5;
+}
+
+li:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+span {
+    display: inline-block;
+    padding: 5px;
+}
+
+.active-list {
+    line-height: 40px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    list-style: disc;
+    opacity: initial;
 }
 
 .task-list {
-    font-size: 1.2rem;
-    line-height: 1.7;
+    font-size: 18px;
     list-style: circle;
-    padding-left: 1.1em;
+    padding-left: 20px;
 }
+
+
 
 form {
     display:flex;
+    padding-bottom: 80px;
 }
 
 .btn {
@@ -55,9 +88,9 @@ form {
 }
 
 .btn.create {
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: 900;
-    margin-right: 0.25em;
+    margin-right: 4px;
     transition: opacity 250ms ease-in;
 }
 
@@ -68,7 +101,10 @@ form {
 .btn.delete {
     font-weight: 700;
     letter-spacing: 1px;
-    font-size: 1rem;
+    font-size: 20px;
+    background: #27847E;
+    color: white;
+    padding: 5px;
 }
 
 .btn.delete:hover {
@@ -78,11 +114,12 @@ form {
 .new {
     background: transparent;
     border: 0;
+    width:90%;
     color: inherit;
     border-bottom: 1px solid currentColor;
-    font-size:inherit;
+    font-size:20px;
     outline: none;
-    padding: 0.25em;
+    padding: 4px;
     transition: border-bottom 150ms ease-in;
     order: 2;
     /* possibly keep the outline and change the color, reverse the button order so its at the end*/
@@ -96,58 +133,32 @@ form {
     border-bottom-width: 3px;
 }
 
-.new:focus::placeholder {
-    opacity: 0.15;
-    /* take off opacity */
-}
-
-/* edit the new task to make the width and spacing look not small */
-.new.list {
-    font-size:1.1rem;
-}
-
 .new.task {
     margin-bottom: 0;
 }
 
-.active-list {
-    font-size: 40px;
-    transition: font-size 600ms ease-in;
-}
-
-.todo-list {
-    flex-grow:2;
-    background: white;
-    /* background: (match color to our scheme);
-    color: (match color to our scheme); */
-    /* figure out what would happen if I corrected that */
-}
-
 .todo-header {
-    padding: 2rem;
-    border-bottom: dashed 0.5px blue;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 13px;
+    border-radius: 20px;
+    background: #27847E;
+    color: white;
+    text-align: center;
 }
 
 .list-title {
-    margin: 0 1rem 0 0;
+    margin: 0 15px 0 0;
+    font-size: 50px;
 }
 
 .task-count {
     margin:0;
-    font-size: 1rem;
+    font-size: 15px;
 }
 
 .todo-body {
-    padding: 2rem;
+    padding: 32px;
     position: relative;
 }
-
-/* use this line to edit the font awesome size and dimensions*/
-
-/* Possibly eliminate custom checkbox try to keep when its checked a line goes through */
 
 [type="checkbox"] {
     opacity: 0;
@@ -158,7 +169,7 @@ form {
     display: inline-flex;
     align-items: center;
     position: relative;
-    margin-bottom: 1.25em;
+    margin-bottom: 20px;
 }
 
 .task {
@@ -171,33 +182,33 @@ form {
     right: 0;
     left: 0;
     bottom: 12px;
-    height: 1px;
+    height: 1.5px;
     background: currentColor;
-    opacity: 0.1;
+    opacity: 0.3;
 }
 
 .custom-checkbox {
     display:inline-block;
-    width: .75rem;
-    height: .75rem;
+    width: 12px;
+    height: 12px;
     cursor: pointer;
     border: 2px solid currentColor;
     border-radius: 50%;
-    margin-right: .75rem;
+    margin-right: 12px;
     transform: scale(1);
     transition: transform 300ms ease-in-out;
 }
 
 .task:hover .custom-checkbox, [type="checkbox"]:focus + label .custom-checkbox {
     transform: scale(1.2);
-    color:rgb(194, 194, 238);
+    color:#27847E;
 }
 
 [type="checkbox"]:checked + label .custom-checkbox {
     transform: scale(1.2);
-    margin-right: .75rem;
-    background: rgb(70, 70, 172);
-    border: 2px solid rgb(70, 70, 172);
+    margin-right: 12px;
+    background: #27847E;
+    border: 2px solid #27847E;
     box-shadow: inset 0 0 0 2px white;
 }
 
@@ -209,7 +220,7 @@ form {
     content: "";
     position: absolute;
     right: 0;
-    left: 1.20em;
+    left: 25px;
     top: 50%;
     height: 3px;
     background: currentColor;
@@ -230,6 +241,5 @@ form {
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: -35px;
+    bottom: 20px;
 }
-
