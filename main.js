@@ -30,7 +30,6 @@ tasksContainer.addEventListener('click', e => {
         const selectedTask = selectedList.tasks.find(task => task.id === e.target.id)
         selectedTask.complete = e.target.checked
         save()
-        renderTaskCount(selectedList)
     }
 })
 
@@ -95,7 +94,6 @@ function render () {
     } else {
     listDisplayContainer.style.display = ''
     listTitleElement.innerText = selectedList.name
-    renderTaskCount(selectedList)
     clearElement(tasksContainer)
     renderTasks(selectedList)
     }
@@ -114,11 +112,7 @@ function renderTasks(selectedList) {
     })
 }
 
-function renderTaskCount(selectedList) {
-    const incompleteTaskCount = selectedList.tasks.filter(task => !task.complete).length
-    const taskString = incompleteTaskCount === 1 ? "task" : "tasks"
-    listCountElement.innerText = `${incompleteTaskCount} ${taskString} remaining`
-}
+
 
 function renderLists() {
     lists.forEach(list => {
@@ -140,13 +134,3 @@ function clearElement(element) {
 }
 
 render()
-
-
-
-
-
-//things to remove
-//change queory selectors to id selectors
-//probably get rid of the tasks remaining
-//add semicolon to everything
-//dont use a template
